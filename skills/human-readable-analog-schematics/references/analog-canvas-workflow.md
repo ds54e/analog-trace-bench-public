@@ -36,6 +36,6 @@ These generated literal labels do not automatically follow later GUI resistance 
 
 ATB source commit: `9071d3cfef6340ad0f703a1e11bbf0ab44a00ef5` at https://github.com/ds54e/analog-trace-bench/tree/9071d3cfef6340ad0f703a1e11bbf0ab44a00ef5
 
-The two local examples (OTA-FIXED and LDO-ALWAYS-ON, Opus 5.5 run 1) passed ordered-pin/value/interface comparison, native reopen checks and deterministic regeneration. They still had poor visual density and label-separated explanatory connections. This is why visual review is independent of electrical verification.
+The local OTA-FIXED / LDO-ALWAYS-ON examples (Opus 5.5 run 1) and OTA-FREE / LDO-CORE examples (Sonnet 5.5 run 1) passed ordered-pin/value/interface comparison, native reopen checks and deterministic regeneration. Visual refinements preserved these electrical contracts. Earlier electrically matching layouts still required changes to spacing, labels and bias routing; keep visual review independent of electrical verification. These are circuit-specific drawing recipes, not a universal automatic layout algorithm.
 
 No upstream branch change or publishing is required for this workflow. Work in isolated local output directories when preserving a benchmark repository is part of the task.

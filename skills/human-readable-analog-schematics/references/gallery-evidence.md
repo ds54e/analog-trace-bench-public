@@ -110,8 +110,19 @@
 
 **注意／適用の限界：** 色枠の外にも関連素子があり、見出しだけでは全接続を説明しきれない。機能境界の正しさは元ネットリストで確認する。
 
-## 前回のATB図との違い
+## 配線と局所密度を比較した追加作例
 
-作例は、MOSの機能的なまとまり、局所的な対称性、短い共通ゲート配線、近接した段間関係を使っている。前回のATB図は接続比較を通した一方、少数の素子を広く配置し、主要な関係の一部を離れた同名ラベルへ任せていた。文字が重ならないだけでは、この差は検出できなかった。
+同日、ミラー・小規模OTA・2段増幅器を8件追加し、LDOを2件再確認した際の観察。初回と重なる作例も、ここでは配線に着目している。新たな閲覧や電気検証を意味しない。
 
-数値サイズの見せ方は別問題。ギャラリーにはW/Lや値を省略した図も多いので、その簡潔さを得るために元のSPICE値を捨ててはならない。読み取り用の図と全パラメーター表を組み合わせるか、全値入り詳細図を添える。
+| 作例 | 観察と採用する点 | 注意 |
+|---|---|---|
+| [current mirror — 56a67nmqbb](https://analog-canvas.tokenzhang.com/api/gallery/56a67nmqbb/preview.svg) | M1/M2のゲートが向かい合い、一本の水平線。D–Gだけ短い局所戻り | この短いD–G接続まで無駄な曲げとして消さない |
+| [5T-OTA — 9sc926amjy](https://analog-canvas.tokenzhang.com/api/gallery/9sc926amjy/preview.svg) | 上の負荷ゲート線、下の共通ソース線が単純な水平線。テールは中央から縦に接続 | 多段・補助バイアスのない小回路なので、そのまま大回路へ外挿しない |
+| [Five Transistor OTA Active Load — vqdg9y347r](https://analog-canvas.tokenzhang.com/api/gallery/vqdg9y347r/preview.svg) | 同じ局所形を再確認。枝の対応と中央のT分岐が明確 | ダイオード側の小さな戻りは意図のある線 |
+| [Simple implementation of a two-stage op amp — 6qg2h7weje](https://analog-canvas.tokenzhang.com/api/gallery/6qg2h7weje/preview.svg) | 中間ノードX/Yと外側の次段ゲートが同じ高さで、段間接続は直線 | 出力段PMOSを上の負荷PMOSと同じ高さに揃えていないことが重要 |
+| [Two-stage op amp with single-ended output — x5jaqe94t7](https://analog-canvas.tokenzhang.com/api/gallery/x5jaqe94t7/preview.svg) | M6ゲートを送り側のノードへ合わせた直線接続。下のミラーも共通線を一本化 | ATBとはトポロジーが異なる。配置関係だけを参考にする |
+| [2stage miller amp wi bias — vys6p4zc7s](https://analog-canvas.tokenzhang.com/api/gallery/vys6p4zc7s/preview.svg) | 左右の補償RCが直列の水平枝、分布バイアスが共通線になっている | ゲート共通線と記号の境界が密な箇所もある。共通線でMOS本体を貫通させない |
+| [Basic Structure of Two-Stage OTA — aztzpg4vhj](https://analog-canvas.tokenzhang.com/api/gallery/aztzpg4vhj/preview.svg) | 二つの中間ノードの高さに合わせて次段ゲートを別々の高さへ置き、段間は直線 | 全てを同じ行へ揃えることより接続を優先した例。交差は残るため規約確認が必要 |
+| [Current Mirror — r3s2w9jkm3](https://analog-canvas.tokenzhang.com/api/gallery/r3s2w9jkm3/preview.svg) | カスコードの縦枝を揃え、遠い補助バイアスはラベルへ分けている | ラベルを一律禁止すると、かえって巨大な横断線が増える |
+| [LDO regulator — 8qatzztvzk](https://analog-canvas.tokenzhang.com/api/gallery/8qatzztvzk/preview.svg) | 主信号を水平、帰還を下端の一本の通路に分ける | 試験用と思われる入力付近の開口などは参考対象外。配線の電気的正しさは未検証 |
+| [LDO regulator’s core structure — pes3mh8swm](https://analog-canvas.tokenzhang.com/api/gallery/pes3mh8swm/preview.svg) | 増幅部出力とバッファM13ゲートを同じ高さに置く。出力段入口も近接接続 | Vfbはラベルで分断。ATBの主帰還を隠す理由としては使わない |
