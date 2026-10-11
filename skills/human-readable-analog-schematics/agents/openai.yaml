@@ -1,0 +1,7 @@
+interface:
+  display_name: "読みやすいアナログ回路図"
+  short_description: "アナログ回路の機能が形で伝わる配置・配線・検証の再利用ガイド"
+  default_prompt: "$human-readable-analog-schematics を使って、接続と素子値を保ちながら人間が読みやすい回路図を作成・改善してください。"
+
+policy:
+  allow_implicit_invocation: true

@@ -41,6 +41,7 @@ Windows commands, and importing new traces.
 | `data/` | Evidence identities, captured task definitions, validation profiles, and pricing snapshots. |
 | `tools/` | Site generation, validation, evidence reading, and trace import. |
 | `tests/` | Tooling and run-navigation tests. |
+| [skills/](skills/README.md) | Reusable schematic drawing and verification guidance. |
 
 Generated HTML is excluded from Git. Only `site/` is deployed to GitHub Pages;
 original archives remain in Release assets and ignored local `evidence/`.
